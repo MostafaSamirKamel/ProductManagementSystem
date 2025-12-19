@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="eng/mostafasamir" />
+    <title>CRUD Operation</title>
+    <link rel="icon" type="image/png" href="./img/5265761-200.png" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- main style -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body class="bg-body text-light">
+    <div class="container py-3">
+      <h1 class="text-center mb-4 fw-semibold">Product Management System</h1>
+
+      <!-- Product Form -->
+      <form class="mx-auto shadow p-4 rounded-3 bg-dark-subtle">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            id="name"
+            placeholder="name"
+            class="form-control"
+          />
+          <label for="name">Name</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            id="category"
+            placeholder="category"
+            class="form-control"
+            list="categories"
+          />
+          <datalist id="categories">
+            <option>mobile</option>
+            <option>laptop</option>
+            <option>watch</option>
+            <option>memory</option>
+            <option>hard disk</option>
+            <option>flash</option>
+            <option>screen</option>
+            <option>cover</option>
+          </datalist>
+          <label for="category">Category</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            id="price"
+            placeholder="price"
+            class="form-control"
+          />
+          <label for="price">Price</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <textarea
+            id="description"
+            placeholder="description"
+            class="form-control"
+            style="min-height: 100px; max-height: 200px"
+          ></textarea>
+          <label for="description">Description</label>
+        </div>
+
+        <div class="mb-3">
+          <label for="file" class="form-label">Product Image</label>
+          <input type="file" id="file" class="form-control" />
+        </div>
+
+        <div>
+          <button
+            type="button"
+            class="btn btn-outline-light"
+            id="addBtn"
+            onclick="addProduct()"
+          >
+            Add Product
+          </button>
+        </div>
+
+        <div class="input-group my-2">
+          <div class="input-group-prepend">
+            <label for="searchInput">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa-solid fa-magnifying-glass py-2"></i>
+              </span>
+            </label>
+          </div>
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="search"
+            aria-label="search"
+            aria-describedby="basic-addon1"
+            oninput="searchProduct()"
+          />
+        </div>
+      </form>
+    </div>
+
+    <!-- Product Cards -->
+    <section class="py-5 bg-body-tertiary">
+      <div class="container">
+        <div class="row g-4" id="productCardsRow">
+          <!-- Single Product Card -->
+
+          <!-- End of Card -->
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
